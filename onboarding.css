@@ -7,9 +7,24 @@
     --gradient-2: linear-gradient(#323232 0%, #767676 49%, #363535 100%);
 }
 body {
+    font-family: 'Poppins';
     background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+header {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+main {
+    margin-top: 40px;
+}
+section {
+    max-width: 406px;
+    overflow-x: hidden;
+}
 p {
     color: #fff;
 }
@@ -31,11 +46,14 @@ a.next {
     height: 30px;
     border-radius: 10px;
 }
-nav.skip {
-    float: right;
-}
 a.skip-txt {
     font-size: 1.8rem;
+    margin-right: 30px;
+}
+
+img {
+    width: 133px;
+    height: 182px;
 }
 
 button {
@@ -63,4 +81,19 @@ div.first div.first-halve, div.second div.second-halve {
 }
 div.first div.second-halve, div.second div.first-halve {
     background-color: var(--tertiary-color);
+}
+
+.images-div {
+    width: 545px;
+    margin-left: -30px;
+}
+.second-images {
+    margin-left: -90px;
+}
+div.first {
+    display: block;
+}
+
+div.second {
+    display: none;
 }
