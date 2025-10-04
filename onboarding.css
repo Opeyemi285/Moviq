@@ -45,6 +45,10 @@ a.next {
     max-width: 406px;
     height: 30px;
     border-radius: 10px;
+    margin: 20px;
+}
+p {
+    text-align: center;
 }
 a.skip-txt {
     font-size: 1.8rem;
@@ -67,7 +71,7 @@ button:hover {
 }
 div.progress-bar {
     display: flex;
-    margin: 10px 0;
+    margin: 20px 20px;
 }
 div.progress-bar div {
     height: 5px;
