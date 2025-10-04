@@ -106,6 +106,8 @@ div.first div.second-halve, div.second div.first-halve {
 .second-images {
     margin-left: -90px;
 }
+
+
 div.first {
     display: block;
 }
@@ -113,3 +115,4 @@ div.first {
 div.second {
     display: none;
 }
+
