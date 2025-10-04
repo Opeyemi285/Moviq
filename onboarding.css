@@ -8,7 +8,7 @@
 }
 body {
     font-family: 'Poppins';
-    background-color: var(--secondary-color);
+    background-color: var(--tertiary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,6 +47,7 @@ a.next {
     height: 30px;
     border-radius: 10px;
     margin: 20px;
+    transition: all 0.3s ease-in-out;
 }
 p {
     text-align: center;
@@ -62,13 +63,21 @@ img {
 }
 
 button {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border: none;
     color: #fff;
+    height: 40px;
+    width: 95px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+button.clicked {
+    background-color: var(--primary-color);
 }
 button:hover {
     cursor: pointer;
     opacity: 0.8;
+    transition: all 0.3s ease-in-out;
 }
 div.progress-bar {
     display: flex;
@@ -85,7 +94,7 @@ div.first div.first-halve, div.second div.second-halve {
     background-color: var(--primary-color);
 }
 div.first div.second-halve, div.second div.first-halve {
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
 }
 
 .images-div {
