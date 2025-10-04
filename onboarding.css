@@ -20,6 +20,16 @@ a {
 }
 a:hover {
     opacity: 0.8;
+} 
+a.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 406px;
+    height: 30px;
+    border-radius: 10px;
 }
 nav.skip {
     float: right;
