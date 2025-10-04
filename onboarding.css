@@ -19,6 +19,9 @@ header {
     top: 0;
     right: 0;
 }
+nav {
+    margin: 15px;
+}
 main {
     margin-top: 40px;
 }
@@ -54,7 +57,6 @@ p {
 }
 a.skip-txt {
     font-size: 1.2rem;
-    margin-right: 10px;
 }
 
 img {
