@@ -27,7 +27,7 @@ a.next {
     align-items: center;
     background-color: var(--primary-color);
     color: #fff;
-    width: 406px;
+    /* width: 406px; */
     height: 30px;
     border-radius: 10px;
 }
