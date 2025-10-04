@@ -39,15 +39,9 @@ div.progress-bar div {
 div div.first-halve {
     margin-right: 6px;
 }
-div.first div.first-halve {
+div.first div.first-halve, div.second div.second-halve {
     background-color: var(--primary-color);
 }
-div.second div.second-halve {
-    background-color: var(--primary-color);
-}
-div.first div.second-halve {
-    background-color: var(--tertiary-color);
-}
-div.second div.first-halve {
+div.first div.second-halve, div.second div.first-halve {
     background-color: var(--tertiary-color);
 }
