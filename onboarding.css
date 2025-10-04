@@ -18,8 +18,36 @@ a {
     color: var(--faded-text);
     text-decoration: none;
 }
+
 button {
     background-color: var(--primary-color);
     border: none;
     color: #fff;
+}
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+div.progress-bar {
+    display: flex;
+    margin: 10px 0;
+}
+div.progress-bar div {
+    height: 5px;
+    width: 200px;
+}
+div div.first-halve {
+    margin-right: 6px;
+}
+div.first div.first-halve {
+    background-color: var(--primary-color);
+}
+div.second div.second-halve {
+    background-color: var(--primary-color);
+}
+div.first div.second-halve {
+    background-color: var(--tertiary-color);
+}
+div.second div.first-halve {
+    background-color: var(--tertiary-color);
 }
