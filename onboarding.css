@@ -6,3 +6,20 @@
     --gradient-1: linear-gradient(#1f1f1f 0%, #333333 100%);
     --gradient-2: linear-gradient(#323232 0%, #767676 49%, #363535 100%);
 }
+body {
+    background-color: var(--secondary-color);
+}
+
+p {
+    color: #fff;
+}
+
+a {
+    color: var(--faded-text);
+    text-decoration: none;
+}
+button {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+}
