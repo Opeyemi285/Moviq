@@ -18,6 +18,15 @@ a {
     color: var(--faded-text);
     text-decoration: none;
 }
+a:hover {
+    opacity: 0.8;
+}
+nav.skip {
+    float: right;
+}
+a.skip-txt {
+    font-size: 1.8rem;
+}
 
 button {
     background-color: var(--primary-color);
