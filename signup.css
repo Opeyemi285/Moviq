@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins';
     background-color: var(--tertiary-color);
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 main {
     display: flex;
@@ -95,7 +95,7 @@ div.socials i {
     background-color: var(--secondary-color);
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 60px;
+    width: 100px;
+    height: 40px;
     border-radius: 10px;
 }
