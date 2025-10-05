@@ -21,7 +21,6 @@ main {
 div.content {
     text-align: center;
     max-width: 406px;
-    overflow: hidden;
 }
 h3 {
     text-align: left;
@@ -55,7 +54,7 @@ button:hover {
 small.privacy {
     color: var(--faded-text);
 }
-small.privacy a {
+small.privacy a, a.sign {
     color: #fff;
     text-decoration: none;
 }
@@ -98,4 +97,8 @@ div.socials i {
     width: 100px;
     height: 40px;
     border-radius: 10px;
+}
+p.account {
+    color: var(--faded-text);
+    margin-top: 20px;
 }
