@@ -14,7 +14,7 @@ body {
 }
 main {
     display: flex;
-    height: 100vh;
+    height: 97vh;
     justify-content: center;
     align-items: center;
 }
