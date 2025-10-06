@@ -53,7 +53,7 @@ nav button.dropdown-toggle {
     div.mobile {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 25px;
     }
     nav input[type="search"] {
         display: none;
@@ -65,7 +65,12 @@ nav button.dropdown-toggle {
     span.account {
         display: none;
     }
+    div.dropdown {
+        border: 2px solid var(--faded-text);
+        border-radius: 50%;
+    }
     .dropdown-toggle::after {
+        display: none;
         margin-left: 0;
     }
 }
