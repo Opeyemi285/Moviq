@@ -62,4 +62,10 @@ nav button.dropdown-toggle {
         display: block;
         font-size: 20px;
     }
+    span.account {
+        display: none;
+    }
+    .dropdown-toggle::after {
+        margin-left: 0;
+    }
 }
