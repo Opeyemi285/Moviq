@@ -2,6 +2,7 @@ const key = '960a5f1a965366de5f1696d8f95457c0'
 
 const TMDB_API_KEY = '960a5f1a965366de5f1696d8f95457c0';
 const BASE_URL = 'https://api.themoviedb.org/3';
+const image_url = 'https://image.tmdb.org/t/p/w300/';
 
 async function getPopularMovies() {
     // Construct the URL, appending the api_key as a query parameter
