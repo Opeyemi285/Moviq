@@ -5,7 +5,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const image_url = 'https://image.tmdb.org/t/p/original/';
 const pages = 1
 const container = document.querySelector('.banner')
-const trending = document.querySelector('.trending-movies')
+const popular = document.querySelector('.popular-movies')
 
 async function getPopularMovies() {
     // Construct the URL, appending the api_key as a query parameter
@@ -40,11 +40,11 @@ async function getPopularMovies() {
                     <p style="color: gold; font-size:30px;"> <i class="bi bi-star-fill"></i> ${(data.results[0].vote_average).toFixed(2)} <span style="font-size: 16px;">/10</span></p>
                 </div>
             `;
-            trending.innerHTML += data.results
+            popular.innerHTML += data.results
             .map(movie => `
                 <div class="movie" id="${movie.id}">
                     <img src="${image_url + movie.poster_path}" 
-                        alt="${movie.title}" 
+                        alt="${movie.title}" loading="lazy"
                         style="width: 150px; height: 225px; border-radius: 10px; margin-right: 10px;">
                     <p font-size: 14px;">${movie.title}</p>
                     <p style="font-size: 12px; color: gold;"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(2)} <span style="font-size: 10px;">/10</span></p>
