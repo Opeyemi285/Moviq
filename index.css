@@ -82,6 +82,7 @@ img.movie-cover {
 p.movie-title {
     font-size: 14px;
     color: var(--faded-text);
+    height: 60px;
 }
 .movie-ratings {
     font-size: 12px; 
