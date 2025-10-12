@@ -36,7 +36,7 @@ async function getPopularMovies() {
             container.innerHTML = `
                 <img class="banner-img" src="${image_url + data.results[0].backdrop_path}" alt="${data.results[0].title}" style="">
                 <div class="banner-texts">
-                    <h3 style="color: white;">${data.results[0].title}</h3>
+                    <h3>${data.results[0].title}</h3>
                     <p style="color: gold; font-size:30px;"> <i class="bi bi-star-fill"></i> ${(data.results[0].vote_average).toFixed(2)} <span style="font-size: 16px;">/10</span></p>
                 </div>
             `;
