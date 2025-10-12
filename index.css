@@ -68,12 +68,12 @@ div.title {
     display: flex; 
     justify-content: space-between;
 }
-div.popular-movies {
+div.popular-movies, .trending-movies {
     display: flex;
     overflow-x: scroll;
 }
 /* Chrome, Edge, Safari */
-.popular-movies::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
 @media (max-width: 450px) {
