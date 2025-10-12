@@ -20,7 +20,7 @@ async function getPopularMovies() {
         }
         
         const data = await response.json();
-        // console.log("Popular Movies Data:", data.results);
+        console.log("Popular Movies Data:", data.results);
         if (data.results.length > 0) {
             // console.log("First movie title:", data.results[0].title);
             // data.results.forEach(movie => {
@@ -42,7 +42,7 @@ async function getPopularMovies() {
             `;
             trending.innerHTML += data.results
             .map(movie => `
-                <div class="movie" style="width: 100%;">
+                <div class="movie" id="${movie.id}">
                     <img src="${image_url + movie.poster_path}" 
                         alt="${movie.title}" 
                         style="width: 150px; height: 225px; border-radius: 10px; margin-right: 10px;">
