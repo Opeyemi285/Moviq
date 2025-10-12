@@ -9,6 +9,7 @@
 body {
     font-family: 'Poppins';
     background-color: var(--tertiary-color);
+    color: white;
 }
 
 nav {
@@ -48,6 +49,21 @@ nav button.dropdown-toggle {
     color: white;
     border: none;
     opacity: 0.8;
+}
+img.banner-img {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover; 
+    object-position: center;
+}
+div.banner-texts {
+    margin-top: -90px; 
+    margin-left: 20px; 
+    text-align: left;
+}
+div.trending-movies {
+    display: flex;
+    overflow-x: scroll;
 }
 @media (max-width: 450px) {
     div.mobile {
