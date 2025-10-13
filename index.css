@@ -77,7 +77,15 @@ div.flex-row {
   display: none;
 }
 img.movie-cover {
-    width: 150px; height: 225px; border-radius: 10px; margin-right: 10px;
+    width: 150px; 
+    height: 225px; 
+    border-radius: 10px; 
+    margin-right: 10px;
+}
+img.movie-cover:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 p.movie-title {
     font-size: 14px;
