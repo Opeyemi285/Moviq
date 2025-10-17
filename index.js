@@ -10,6 +10,7 @@ const container = document.querySelector('.banner')
 const popular = document.querySelector('.popular-movies')
 const trending = document.querySelector('.trending-movies')
 const top_rated = document.querySelector('.top-rated-movies')
+const upcoming = document.querySelector('.upcoming-movies')
 
 async function getPopularMovies() {
     // Construct the URL, appending the api_key as a query parameter
@@ -34,12 +35,14 @@ async function getPopularMovies() {
             `;
             popular.innerHTML += data.results
             .map(movie => `
-                <div class="movie" id="${movie.id}">
-                    <img class="movie-cover" src="${image_url + movie.poster_path}" 
-                        alt="${movie.title || movie.name}" loading="lazy">
-                    <p class="movie-title">${movie.title || movie.name}</p>
-                    <p class="movie-ratings"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
-                </div>
+                <a href="/details.html">
+                    <div class="movie" id="${movie.id}">
+                        <img class="movie-cover" src="${image_url + movie.poster_path}" 
+                            alt="${movie.title || movie.name}" loading="lazy">
+                        <p class="movie-title">${movie.title || movie.name}</p>
+                        <p class="movie-ratings"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
+                    </div>
+                </a>
             `)
             .join('');
 
@@ -65,12 +68,14 @@ async function TrendingMovies() {
     if (data.results.length > 0) {
         trending.innerHTML += data.results
         .map(movie => `
-            <div class="movie" id="${movie.id}">
-                <img class="movie-cover" src="${image_url + movie.poster_path}" 
-                    alt="${movie.title || movie.name}" loading="lazy">
-                <p class="movie-title" font-size: 14px;">${movie.title || movie.name}</p>
-                <p class="movie-ratings" style="font-size: 12px; color: gold;"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
-            </div>
+            <a href="/details.html">
+                <div class="movie" id="${movie.id}">
+                    <img class="movie-cover" src="${image_url + movie.poster_path}" 
+                        alt="${movie.title || movie.name}" loading="lazy">
+                    <p class="movie-title" font-size: 14px;">${movie.title || movie.name}</p>
+                    <p class="movie-ratings" style="font-size: 12px; color: gold;"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
+                </div>
+            </a>
         `)
         .join('');
 
@@ -92,17 +97,38 @@ async function TopRatedMovies() {
     if (data.results.length > 0) {
         top_rated.innerHTML += data.results
         .map(movie => `
-            <div class="movie" id="${movie.id}">
-                <img class="movie-cover" src="${image_url + movie.poster_path}" 
-                    alt="${movie.title || movie.name}" loading="lazy">
-                <p class="movie-title" font-size: 14px;">${movie.title || movie.name}</p>
-                <p class="movie-ratings" style="font-size: 12px; color: gold;"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
-            </div>
+            <a href="/details.html">
+                <div class="movie" id="${movie.id}">
+                    <img class="movie-cover" src="${image_url + movie.poster_path}" 
+                        alt="${movie.title || movie.name}" loading="lazy">
+                    <p class="movie-title" font-size: 14px;">${movie.title || movie.name}</p>
+                    <p class="movie-ratings" style="font-size: 12px; color: gold;"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
+                </div>
+            </a>
         `)
         .join('');
 
     }
-
-    
 }
 TopRatedMovies();
+// async function UpcomingMovies(){
+//     const url = `${BASE_URL}/movie/upcoming?api_key=${TMDB_API_KEY}&page=${pages}`
+//     const response = await fetch(url);
+//     if (!response.ok) {
+//         throw new Error(`HTTP error! status: ${response.status}`);
+//     }
+//     const data = await response.json();
+//     if (data.results.length > 0) {
+//         upcoming.innerHTML += data.results
+//         .map(movie => `
+//             <div class="movie" id="${movie.id}">
+//                 <img class="movie-cover" src="${image_url + movie.poster_path}" 
+//                     alt="${movie.title || movie.name}" loading="lazy">
+//                 <p class="movie-title" font-size: 14px;">${movie.title || movie.name}</p>
+//                 <p class="movie-ratings" style="font-size: 12px; color: gold;"> <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} <span style="font-size: 10px;">/10</span></p>
+//             </div>
+//         `)
+//         .join('');
+//     }
+// }
+// UpcomingMovies();

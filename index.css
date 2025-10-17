@@ -45,6 +45,12 @@ nav button.dropdown-toggle {
     border: none;
     transition: all 0.3s ease-in-out;
 }
+a {
+    text-decoration: none;
+}
+a.see-all {
+    text-decoration: underline;
+}
 .dropdown-toggle:hover {
     color: white;
     border: none;
