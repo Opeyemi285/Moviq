@@ -204,7 +204,6 @@ async function getUpcomingMovies() {
             `)
             .join('');
 
-        // Add Click Event Listeners
         document.querySelectorAll('.movie-link').forEach(link => {
             link.addEventListener('click', function () {
                 const movieData = {
