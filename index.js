@@ -13,13 +13,11 @@ const top_rated = document.querySelector('.top-rated-movies')
 const upcoming = document.querySelector('.upcoming-movies')
 
 async function getPopularMovies() {
-    // Construct the URL, appending the api_key as a query parameter
     const url = `${BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&page=${pages}`;
 
     try {
         const response = await fetch(url);
         
-        // Check if the request was successful
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -69,7 +67,7 @@ async function getPopularMovies() {
             }
 
     } catch (error) {
-        alert("Make sure you are connected to the internet", error);
+        alert("Make sure your internet is stable", error);
     }
 }
 
