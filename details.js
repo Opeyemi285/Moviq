@@ -1,11 +1,10 @@
 // Get movie data from sessionStorage
 const movie = JSON.parse(sessionStorage.getItem('selectedMovie'));
 
+
 const TMDB_API_KEY = '960a5f1a965366de5f1696d8f95457c0';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const IMAGE_URL = 'https://image.tmdb.org/t/p/original';
 
-// Select where to display the movie details
 const movieDetails = document.querySelector('.movie-details');
 
 if (!movie) {
@@ -47,6 +46,7 @@ if (!movie) {
                             <span style="font-size: 14px; color: white;">/10</span>
                         </p>
                         <p class="movie-overview">${movie.overview}</p>
+                        <p class="movie-release-date">Release date: ${movie.release_date}</p>
                     </div>
                 </div>
             `;
