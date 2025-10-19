@@ -49,6 +49,15 @@ iframe#trailer-player {
     height: 500px;
 }
 
+.not-available {
+    color: var(--faded-text);
+}
+.error {
+    color: var(--primary-color);
+}
+.movie-descs {
+    padding: 20px;
+}
 @media (max-width: 450px) {
     div.mobile {
         display: flex;

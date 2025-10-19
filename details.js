@@ -35,7 +35,7 @@ if (!movie) {
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                                </iframe>`
-                            : `<p style="color: gray;">Trailer not available.</p>`
+                            : `<p class="not-available">Trailer not available.</p>`
                         }
                     </div>
 
@@ -53,7 +53,7 @@ if (!movie) {
 
         } catch (error) {
             console.error("Error fetching trailer:", error);
-            movieDetails.innerHTML = `<p style="color: red;">Unable to load movie details. Please check your internet connection.</p>`;
+            movieDetails.innerHTML = `<p class="error">Unable to load movie details. Please check your internet connection.</p>`;
         }
     }
 

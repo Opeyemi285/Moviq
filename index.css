@@ -29,7 +29,7 @@ i.bi-search {
     color: white;
     display: none;
 }
-nav input[type="search"] {
+nav input[type="text"] {
     width: 400px;
     height: 35px;
     border-radius: 20px;
@@ -108,7 +108,7 @@ p.movie-title {
         align-items: center;
         gap: 15px;
     }
-    nav input[type="search"] {
+    nav input[type="text"] {
         display: none;
     }
     i.bi-search {
