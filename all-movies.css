@@ -63,9 +63,9 @@ img.movie-cover:hover {
     cursor: pointer;
 }
 div.all-movies {
-    padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 a.movie-link {
     width: 150px;
