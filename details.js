@@ -12,7 +12,7 @@ if (!movie) {
 } else {
     // Fetch trailer for the selected movie
     async function loadMovieDetails() {
-        const trailerURL = `${BASE_URL}/movie/${movie.id}/videos?api_key=${TMDB_API_KEY}&language=en-US`;
+        const trailerURL = `${BASE_URL}/${movie.media_type}/${movie.id}/videos?api_key=${TMDB_API_KEY}&language=en-US`;
 
         try {
             const response = await fetch(trailerURL);
@@ -53,7 +53,7 @@ if (!movie) {
 
         } catch (error) {
             console.error("Error fetching trailer:", error);
-            movieDetails.innerHTML = `<p class="error">Unable to load movie details. Please check your internet connection.</p>`;
+            movieDetails.innerHTML = `<p class="error">Unable to load movie details. Please Try reloading the page.</p>`;
         }
     }
 

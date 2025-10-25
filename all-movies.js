@@ -192,5 +192,93 @@ async function getMovies() {
             }
         }
     }
+    else if (movie.id == "popularTV") {
+        title.innerHTML+= " - Popular TV Shows"
+        for (i = pages; i < 500; i++) {
+            const url = `${BASE_URL}/tv/popular?api_key=${TMDB_API_KEY}&page=${i}`;
+
+            const response = await fetch (url)
+            const data = await response.json()
+            if (data.results.length > 0) {
+                    all.innerHTML += data.results
+                        .map(movie => `
+                            <a href="/details.html" class="movie-link" data-id="${movie.id}" data-title="${movie.title || movie.name}" data-overview="${movie.overview}" data-rating="${movie.vote_average}" data-date="${movie.release_date || movie.first_air_date || 'N/A'}" data-type="tv">
+                                <div class="movie" id="${movie.id}">
+                                    <img class="movie-cover" 
+                                        src="${image_url + movie.poster_path}" 
+                                        alt="${movie.title || movie.name}" 
+                                        loading="lazy">
+                                    <p class="movie-title" style="font-size: 14px;">
+                                        ${movie.title || movie.name}
+                                    </p>
+                                    <p class="movie-ratings" style="font-size: 12px; color: gold;">
+                                        <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} 
+                                        <span style="font-size: 10px;">/10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        `)
+                        .join('');
+                document.querySelectorAll('.movie-link').forEach(link => {
+                    link.addEventListener('click', function () {
+                        const movieData = {
+                        id: this.dataset.id,
+                        title: this.dataset.title,
+                        overview: this.dataset.overview,
+                        rating: this.dataset.rating,
+                        release_date: this.dataset.date,
+                        media_type: this.dataset.type,
+                        };
+                        sessionStorage.setItem('selectedMovie', JSON.stringify(movieData));
+                    });
+                });
+
+            }
+        }
+    }
+    else if (movie.id == "topRatedTV") {
+        title.innerHTML+= " - Popular TV Shows"
+        for (i = pages; i < 500; i++) {
+            const url = `${BASE_URL}/tv/top_rated?api_key=${TMDB_API_KEY}&page=${i}`;
+
+            const response = await fetch (url)
+            const data = await response.json()
+            if (data.results.length > 0) {
+                    all.innerHTML += data.results
+                        .map(movie => `
+                            <a href="/details.html" class="movie-link" data-id="${movie.id}" data-title="${movie.title || movie.name}" data-overview="${movie.overview}" data-rating="${movie.vote_average}" data-date="${movie.release_date || movie.first_air_date || 'N/A'}" data-type="tv">
+                                <div class="movie" id="${movie.id}">
+                                    <img class="movie-cover" 
+                                        src="${image_url + movie.poster_path}" 
+                                        alt="${movie.title || movie.name}" 
+                                        loading="lazy">
+                                    <p class="movie-title" style="font-size: 14px;">
+                                        ${movie.title || movie.name}
+                                    </p>
+                                    <p class="movie-ratings" style="font-size: 12px; color: gold;">
+                                        <i class="bi bi-star-fill"></i> ${(movie.vote_average).toFixed(1)} 
+                                        <span style="font-size: 10px;">/10</span>
+                                    </p>
+                                </div>
+                            </a>
+                        `)
+                        .join('');
+                document.querySelectorAll('.movie-link').forEach(link => {
+                    link.addEventListener('click', function () {
+                        const movieData = {
+                        id: this.dataset.id,
+                        title: this.dataset.title,
+                        overview: this.dataset.overview,
+                        rating: this.dataset.rating,
+                        release_date: this.dataset.date,
+                        media_type: this.dataset.type,
+                        };
+                        sessionStorage.setItem('selectedMovie', JSON.stringify(movieData));
+                    });
+                });
+
+            }
+        }
+    }
 }
 getMovies()
