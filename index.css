@@ -108,6 +108,13 @@ p.movie-title {
         align-items: center;
         gap: 15px;
     }
+    nav input {
+        display: none;
+    }
+    i.bi-search {
+        display: block;
+        font-size: 20px;
+    }
     span.account {
         display: none;
     }
