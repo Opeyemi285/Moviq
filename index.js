@@ -17,9 +17,12 @@ const TopRated_TV = document.querySelector(".top-rated-tv")
 function toggleSearchMobile() {
     const search = document.querySelector(".search-input")
     const mobile_search = document.querySelector('.bi-search')
-    search.style.display = "block"
+    search.style.opacity = "1"
     mobile_search.style.display = 'none'
     search.style.width = "60%";
+    setTimeout(() => {
+            search.focus(); 
+    }, 450);
 }
 
 async function getPopularMovies() {

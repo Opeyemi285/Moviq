@@ -37,7 +37,7 @@ nav input {
     padding-left: 15px;
     background-color: var(--tertiary-color);
     color: white;
-
+    transition: all 0.4s ease;
 }
 nav button.dropdown-toggle {
     background-color: transparent;
@@ -109,7 +109,8 @@ p.movie-title {
         gap: 15px;
     }
     nav input {
-        display: none;
+        width: 0;
+        opacity: 0;
     }
     i.bi-search {
         display: block;
