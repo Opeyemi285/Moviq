@@ -17,7 +17,7 @@ const pages = 1;
 async function getMovies() {
     if (movie.id == "popular") {
         title.innerHTML+= " - popular"
-    for (i = pages; i < 20; i++) {
+    for (i = pages; i <= 500; i++) {
             const url = `${BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&page=${i}`;
 
             const response = await fetch (url)
@@ -60,7 +60,7 @@ async function getMovies() {
     }
     else if (movie.id == "trending") {
         title.innerHTML+= " - trending"
-        for (i = pages; i < 20; i++) {
+        for (i = pages; i < 500; i++) {
             const url = `${BASE_URL}/trending/all/week?api_key=${TMDB_API_KEY}&page=${i}`;
 
             const response = await fetch (url)
@@ -103,7 +103,7 @@ async function getMovies() {
     }
     else if (movie.id == "topRated") {
         title.innerHTML+= " - Top Rated"
-        for (i = pages; i < 20; i++) {
+        for (i = pages; i < 500; i++) {
             const url = `${BASE_URL}/movie/top_rated?api_key=${TMDB_API_KEY}&page=${i}`;
 
             const response = await fetch (url)
@@ -147,7 +147,7 @@ async function getMovies() {
     else if (movie.id == "upcoming") {
         title.innerHTML+= " - Upcoming Movies"
         
-        for (i = pages; i < 20; i++) {
+        for (i = pages; i < 500; i++) {
             const MIN_DATE = new Date().toISOString().split('T')[0];
     
             const MAX_DATE = '3000-12-31';
