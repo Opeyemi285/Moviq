@@ -6,7 +6,6 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const image_url = 'https://image.tmdb.org/t/p/original';
 const pages = 1;
 const main = document.querySelector('main');
-const search = document.querySelector('.search-input');
 const container = document.querySelector('.banner')
 const popular = document.querySelector('.popular-movies')
 const trending = document.querySelector('.trending-movies')
@@ -14,6 +13,14 @@ const top_rated = document.querySelector('.top-rated-movies')
 const upcoming = document.querySelector('.upcoming-movies')
 const popular_TV = document.querySelector(".popular-tv") 
 const TopRated_TV = document.querySelector(".top-rated-tv")
+
+function toggleSearchMobile() {
+    const search = document.querySelector(".search-input")
+    const mobile_search = document.querySelector('.bi-search')
+    search.style.display = "block"
+    mobile_search.style.display = 'none'
+    search.style.width = "60%";
+}
 
 async function getPopularMovies() {
     const url = `${BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&page=${pages}`;
