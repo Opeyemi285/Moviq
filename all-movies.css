@@ -55,6 +55,12 @@ img.movie-cover {
     height: 225px; 
     border-radius: 10px; 
     margin-right: 10px;
+    transition: all 0.3 ease;
+}
+img.movie-cover:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 div.all-movies {
     padding: 20px;
