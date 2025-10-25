@@ -45,6 +45,25 @@ nav button.dropdown-toggle {
     border: none;
     transition: all 0.3s ease-in-out;
 }
+a {
+    color: var(--faded-text);
+    text-decoration: none;
+}
+
+img.movie-cover {
+    width: 150px; 
+    height: 225px; 
+    border-radius: 10px; 
+    margin-right: 10px;
+}
+div.all-movies {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+a.movie-link {
+    width: 150px;
+}
 
 @media (max-width: 450px) {
     div.mobile {
