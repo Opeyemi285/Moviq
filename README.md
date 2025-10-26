@@ -1,4 +1,4 @@
-# Moviq
+# [Moviq](https://moviq-six.vercel.app)
 
 **Moviq** is a simple and engaging movie discovery web app that lets users explore movies effortlessly.  
 View trailers, read descriptions, check ratings, and see release dates — all in one clean, responsive interface.
