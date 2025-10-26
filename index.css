@@ -19,7 +19,7 @@ nav {
     padding: 10px 20px;
     background-color: var(--secondary-color);
 }
-nav a.title {
+a.title {
     text-decoration: none;
     color: white;
     font-size: 24px;
@@ -113,7 +113,19 @@ p.movie-title {
 a.movie-link {
     width: 160px;
 }
-
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    height: 85px;
+    background-color: #1e1e1e36;
+}
+.brand {
+    display: flex;
+    justify-content: space-between;
+}
+.brand a {
+    margin-right: 10px;
+}
 @media (max-width: 450px) {
     div.mobile {
         display: flex;
