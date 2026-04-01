@@ -7,110 +7,177 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
+    <!-- Tahoma / Win2K fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tahoma&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/index.css">
-    <title>Moviq</title>
+    <title>Moviq — Windows 2000 Edition</title>
 </head>
 <body>
+
+    <!-- ===================== HEADER ===================== -->
     <header>
+        <!-- Title bar -->
+        <div class="titlebar-stripe">
+            <span class="win-icon">M</span>
+            <span class="win-title">Moviq — Movie Explorer 2000</span>
+            <div class="titlebar-controls">
+                <button class="win-btn" title="Minimize">_</button>
+                <button class="win-btn" title="Maximize">&#9633;</button>
+                <button class="win-btn" title="Close" style="background:#c0392b;color:#fff;">&#x2715;</button>
+            </div>
+        </div>
+
+        <!-- Menu bar -->
         <nav>
-            <a class="title" href="/index.html">MOVIQ</a>
-            <input type="search" name="search" class="search-input" id="search" placeholder="Search...">
+            <a class="title" href="/index.html">&#127909; MOVIQ</a>
+            <input type="search" name="search" class="search-input" id="search" placeholder="Search movies &amp; TV shows...">
             <div class="mobile">
                 <i class="bi bi-search" onclick="toggleSearchMobile()"></i>
                 <div class="dropdown">
                     <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="account">Account</span> <i class="bi bi-person"></i>
+                        <i class="bi bi-person"></i> <span class="account">Account</span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/onboarding.html">Sign Up</a></li>
-                        <li><a class="dropdown-item" href="/signin.html">Login</a></li>
+                        <li><a class="dropdown-item" href="/onboarding.html"><i class="bi bi-person-plus"></i> Sign Up</a></li>
+                        <li><a class="dropdown-item" href="/signin.html"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
                     </ul>
                 </div>   
             </div>
         </nav>
-    </header>
-    <main>
-        <div class="banner">
-            
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <button class="toolbar-btn" onclick="history.back()"><i class="bi bi-arrow-left"></i> Back</button>
+            <button class="toolbar-btn" onclick="history.forward()"><i class="bi bi-arrow-right"></i> Forward</button>
+            <button class="toolbar-btn" onclick="location.reload()"><i class="bi bi-arrow-clockwise"></i> Refresh</button>
+            <div class="toolbar-separator"></div>
+            <button class="toolbar-btn" onclick="window.scrollTo(0,0)"><i class="bi bi-house"></i> Home</button>
+            <a href="/all-movies.html" class="toolbar-btn" style="display:inline-block;"><i class="bi bi-collection-play"></i> All Movies</a>
+            <div class="toolbar-separator"></div>
+            <button class="toolbar-btn"><i class="bi bi-bookmark"></i> Favorites</button>
+            <button class="toolbar-btn"><i class="bi bi-printer"></i> Print</button>
         </div>
+
+        <!-- Ticker -->
+        <div class="win-ticker">
+            <span class="win-ticker-inner">
+                &#9658; Welcome to MOVIQ 2000 &nbsp;&nbsp;|&nbsp;&nbsp; Discover Popular Movies &amp; TV Shows &nbsp;&nbsp;|&nbsp;&nbsp; Now Showing: Latest Blockbusters &nbsp;&nbsp;|&nbsp;&nbsp; Click any poster to view details &nbsp;&nbsp;|&nbsp;&nbsp; Powered by TMDB API &nbsp;&nbsp;|&nbsp;&nbsp; &copy; 2000 Moviq Corporation &nbsp;&nbsp;&nbsp;
+            </span>
+        </div>
+    </header>
+
+    <!-- ===================== MAIN ====================== -->
+    <main>
+        <!-- Banner -->
+        <div class="banner"></div>
+
         <section class="movies">
+            <!-- Popular Movies -->
             <div class="popular">
                 <div class="title">
-                    <h5>Popular Movies</h5>
-                    <a class="see-all" href="/all-movies.html" style="color: white;" id="popular">See All</a>
+                    <h5><i class="bi bi-star-fill" style="color:#ffd700;margin-right:4px;"></i>Popular Movies</h5>
+                    <a class="see-all" href="/all-movies.html" id="popular">See All &raquo;</a>
                 </div>
-                <div class="popular-movies flex-row">
-
-                </div>
+                <div class="popular-movies flex-row"></div>
             </div>
-                
+
+            <!-- Trending Now -->
             <div class="trending-now">
                 <div class="title">
-                    <h5>Trending Now</h5>
-                    <a href="/all-movies.html" class="see-all" style="color: white;" id="trending">See All</a>
+                    <h5><i class="bi bi-graph-up-arrow" style="color:#a8d4ff;margin-right:4px;"></i>Trending Now</h5>
+                    <a href="/all-movies.html" class="see-all" id="trending">See All &raquo;</a>
                 </div>
-                <div class="trending-movies flex-row">
-
-                </div>
+                <div class="trending-movies flex-row"></div>
             </div>
+
+            <!-- Top Rated Movies -->
             <div class="top-rated">
                 <div class="title">
-                    <h5>Top Rated Movies</h5>
-                    <a href="/all-movies.html" class="see-all" style="color: white;" id="topRated">See All</a>
+                    <h5><i class="bi bi-trophy-fill" style="color:#ffd700;margin-right:4px;"></i>Top Rated Movies</h5>
+                    <a href="/all-movies.html" class="see-all" id="topRated">See All &raquo;</a>
                 </div>
-                <div class="top-rated-movies flex-row">
+                <div class="top-rated-movies flex-row"></div>
+            </div>
 
-                </div>
-            </div> 
+            <!-- Upcoming Movies -->
             <div class="upcoming">
                 <div class="title">
-                    <h5>Upcoming Movies</h5>
-                    <a href="/all-movies.html" class="see-all" style="color: white;" id="upcoming">See All</a>
+                    <h5><i class="bi bi-calendar-event" style="color:#a8d4ff;margin-right:4px;"></i>Upcoming Movies</h5>
+                    <a href="/all-movies.html" class="see-all" id="upcoming">See All &raquo;</a>
                 </div>
-                <div class="upcoming-movies flex-row">
-
-                </div>
+                <div class="upcoming-movies flex-row"></div>
             </div>
+
+            <!-- Popular TV Shows -->
             <div class="popular-tv-shows">
                 <div class="title">
-                    <h5>Popular TV Shows</h5>
-                    <a href="/all-movies.html" class="see-all" style="color: white;" id="popularTV">See All</a>
+                    <h5><i class="bi bi-tv" style="color:#a8d4ff;margin-right:4px;"></i>Popular TV Shows</h5>
+                    <a href="/all-movies.html" class="see-all" id="popularTV">See All &raquo;</a>
                 </div>
-                <div class="popular-tv flex-row">
-
-                </div>
+                <div class="popular-tv flex-row"></div>
             </div>
+
+            <!-- Top Rated TV Shows -->
             <div class="top-rated-tv-shows">
                 <div class="title">
-                    <h5>Top Rated TV Shows</h5>
-                    <a href="/all-movies.html" class="see-all" style="color: white;" id="topRatedTV">See All</a>
+                    <h5><i class="bi bi-award-fill" style="color:#ffd700;margin-right:4px;"></i>Top Rated TV Shows</h5>
+                    <a href="/all-movies.html" class="see-all" id="topRatedTV">See All &raquo;</a>
                 </div>
-                <div class="top-rated-tv flex-row">
-
-                </div>
-            </div>    
+                <div class="top-rated-tv flex-row"></div>
+            </div>
         </section>
-        
     </main>
+
+    <!-- ===================== STATUS BAR ================ -->
+    <div class="win-statusbar">
+        <div class="win-statusbar-cell" id="status-text">Ready</div>
+        <div class="win-statusbar-cell">TMDB API</div>
+        <div class="win-statusbar-cell" style="flex:1;text-align:left;">&#127759; Moviq 2000</div>
+        <div class="win-statusbar-cell" id="status-time"></div>
+    </div>
+
+    <!-- ===================== FOOTER ==================== -->
     <footer>
         <div class="brand">
-            <a href="#" class="title">MOVIQ</a>
-            <!-- <p>Moviq lets you explore movies with ease — watch trailers, read descriptions, check ratings, and discover release dates all in one place. Simple, fast, and built for movie lovers.</p> -->
+            <a href="#" class="title">&#127909; MOVIQ</a>
             <div class="socials">
-                <a href="http://x.com/AbimbolaKa79043" target="_blank"><i class="bi bi-twitter-x"></i></a>
-                <a href="http://linkedin.com/in/abdul-kabir-abimbola-337b75282" target="_blank"><i class="bi bi-linkedin"></i></a>
-                <a href="https://www.instagram.com/horpeyemi1290" target="_blank"><i class="bi bi-instagram"></i></a>
-                <a href="https://web.facebook.com/h.r.pe.799310" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="http://x.com/AbimbolaKa79043" target="_blank" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                <a href="http://linkedin.com/in/abdul-kabir-abimbola-337b75282" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.instagram.com/horpeyemi1290" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+                <a href="https://web.facebook.com/h.r.pe.799310" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
             </div>
         </div>
-        <small style="display: block; text-align: center;">Copyright&copy; <a href="https://github.com/Opeyemi285" target="_blank" style="color: #979797; text-decoration: underline;">Abimbola Opeyemi</a></small>
+        <small>Copyright &copy; 2000–2025 <a href="https://github.com/Opeyemi285" target="_blank">Abimbola Opeyemi</a> &nbsp;|&nbsp; Moviq Corporation &nbsp;|&nbsp; All rights reserved.</small>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="/index.js"></script>
+    <script>
+        // Status bar clock
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('status-time').textContent =
+                now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Update status on fetch
+        const origFetch = window.fetch;
+        window.fetch = function(...args) {
+            document.getElementById('status-text').textContent = 'Loading...';
+            return origFetch.apply(this, args).then(r => {
+                document.getElementById('status-text').textContent = 'Done';
+                return r;
+            }).catch(e => {
+                document.getElementById('status-text').textContent = 'Error';
+                throw e;
+            });
+        };
+    </script>
 </body>
 </html>
